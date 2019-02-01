@@ -130,12 +130,14 @@ def count_primes(m,n):
     for k in range((n + 1) - m):
         if is_prime(k):
             count = count + 1
+            if k != 0:
+                print(k)
     return count
 
 
 def test_multiply_primes():
     ################################################################################
-    #   TODO: 6. Read the doc string for multiply_primes, below, then
+    #   DONE: 6. Read the doc string for multiply_primes, below, then
     #       then read the test cases here.
     #   After you have read both, change this _TODO_ to DONE.
     ###############################################################################
@@ -180,13 +182,16 @@ def multiply_primes(m,n):
        #     since 2*3*5*7 is 210
        """
     ################################################################################
-    #   TODO: 6. Write the function multiply_primes(m,n) below here
+    #   DONE: 6. Write the function multiply_primes(m,n) below here
     # After you have coded and tested, change this _TODO_ to DONE.
     ###############################################################################
+    product = 1
     for k in range((n + 1) - m):
         if is_prime(k + m):
             product = product * (k + m)
-        
+    if product == 1:
+        product = 0
+
     return product
 
 main()
